@@ -1,0 +1,26 @@
+<%= form_for(@user) do |f| %>
+    <div class="field">
+      <%= f.label "Ім’я" %><br />
+      <%= f.text_field :username, autofocus: true , required:true%>
+    </div>
+
+    <div class="field">
+      <%= f.label "Пошта" %><br />
+      <%= f.email_field :email, autofocus: true, required:true %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Пароль" %>
+      <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Зберегти" %>
+    </div>
+    <%= link_to users_path do%>
+        <%= icon "chevron-circle-left", "2x" %>
+    <%end%>
+<% end %>

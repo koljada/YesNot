@@ -1,0 +1,52 @@
+<div class="card well clickable container-fluid">
+  <div class="row">
+    <div class="topic col-md-10">
+      <%=link_to topic.content, topic_path(topic)%>
+    </div>
+    <div class="col-md-2 edit">
+      <% if can? :manage, topic %>
+          <%= link_to icon('times', "2x"), topic_path(topic),
+                      :method => :delete,
+                      :data => { confirm:'Точно удалить?'}
+          %>
+          <%= link_to edit_topic_path(topic) do %>
+              <%=icon 'pencil-square-o',"2x" %>
+          <%end%>
+
+          <div id="edit_modal" class="modal fade" role="dialog"  aria-hidden="true">
+            <%= render 'edit_modal',  topic: topic %>
+            <%= topic.content  %>
+          </div>
+
+      <%end%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
+                        <% if current_user %>
+                                <span class="likes">
+                                  <% if current_user.like? topic
+                                       like_class='liked'
+                                     else
+                                       like_class='unliked'
+                                     end%>
+                                  <%= link_to like_it_topic_path(topic), class: like_class , method: :put do %>
+                                      <%= icon "thumbs-up" %>
+                                      <%= icon "thumbs-o-up" %>
+                                  <% end %>
+                                  <span class="counter"><%=topic.like_counter%></span>
+                                </span>
+                        <% else%>
+                                  <span class='counter'>
+                                       <%=topic.like_counter%>
+                                  </span>
+                        <%end%>
+                  <span class="info">
+                    <p><%= topic.user.username || topic.user.email %>
+                    <%= icon "comments-o" %>
+                    <h6><%= topic.created_at.strftime(" %d %b %Y") %></h6>
+                  </span>
+    </div>
+  </div>
+</div>
+

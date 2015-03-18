@@ -1,0 +1,109 @@
+
+
+  .cards{
+    h1{
+      text-align: center;
+    }
+    .card{
+      padding: 7px;
+      margin: 7px;
+      border: 1px solid slategrey;
+
+      .edit{
+
+        a{
+          float:right;
+          margin:3px;
+        }
+
+      }
+
+      .topic{
+        font-size: 1.5em;
+        text-align: center;
+        display: block;
+        a{
+          display:block;
+        }
+        p{
+          word-break: break-all;
+        }
+      }
+
+      .likes{
+        font-size: 1.3em;
+        margin: 2px;
+      }
+
+      .info{
+        *{
+          margin:2px;
+          padding-top: 7px;
+        }
+        font-size: 10pt;
+        color: grey;
+        text-align: right;
+        float:right;
+        p{
+          float:left;
+          padding-top: 7px;
+          color:#000000;
+        }
+        i{
+          padding-right: 15px;
+        }
+        h6{
+          margin-top: 10px;
+          float:left;
+        }
+      }
+
+    }
+    .card:hover{
+      background-color:darkolivegreen;
+    }
+  }
+
+  .page-header{
+    h1{
+      margin:8px;
+      display: inline;
+    }
+  }
+
+  a{
+    color:darkslategrey;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+
+
+
+  .answers{
+
+     button{
+        height: 102% ;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+    textarea{
+      overflow-y: hidden; /* prevents scroll bar flash */
+      padding-top: 1.1em; /* prevents text jump on Enter keypress */
+      height: 10px;
+      resize: none;
+    }
+    margin:10px;
+    margin-bottom: 20px;
+  }
+
+  .liked{
+    .fa-thumbs-o-up{display: none}
+  }
+  .unliked{
+    .fa-thumbs-up{display: none}
+  }
+
+
+

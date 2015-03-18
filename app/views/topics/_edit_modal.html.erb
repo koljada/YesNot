@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+<div class="modal-body">
+  <div class="page-header" >
+    <h1>Редагування питання <%= topic.content%></h1>
+  </div>
+  <%= render 'topics/form',  topic: topic %>
+</div>
+<div class="modal-footer">
+  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  <button class="btn btn-primary pl" type="submit"><%=icon 'plus-square', '2px'%></button>
+</div>

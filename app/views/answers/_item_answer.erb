@@ -1,0 +1,28 @@
+<div class="card well">
+  <div class="topic">
+    <p><%= render answer_item%></p>
+  </div>
+                        <% if current_user %>
+                                <span class="likes">
+                                  <% if current_user.like? answer_item
+                                         like_class='liked'
+                                  else
+                                         like_class='unliked'
+                                  end%>
+                                  <%= link_to like_it_answer_path(answer_item), class: like_class , method: :put do %>
+                                       <%= icon "thumbs-o-up" %>
+                                       <%=icon "thumbs-up" %>
+                                  <% end %>
+                                  <span class="counter"><%=answer_item.like_counter%></span>
+                                </span>
+                        <% else%>
+                                  <span class='counter'>
+                                       <%=answer_item.like_counter%>
+                                  </span>
+                        <%end%>
+                      <span class="info">
+                        <p><%=  answer_item.user.username ||answer_item.user.email %>
+                        <%= icon "comments-o" %>
+                        <h6><%= answer_item.created_at.strftime(" %d %b %Y") %></h6>
+                      </span>
+</div>

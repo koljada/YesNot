@@ -1,0 +1,13 @@
+<%= form_for(topic) do |f| %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="input-group answers">
+      <%= f.text_area :content,required:true, :class => 'form-control' %>
+      <span class="input-group-btn">
+        <button class="btn btn-primary pl" type="submit"><%=icon 'plus-square', '2px'%></button>
+   </span>
+    </div>
+  </div>
+</div>
+
+<% end %>

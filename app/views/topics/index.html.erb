@@ -1,0 +1,21 @@
+<div class="page-header" xmlns="http://www.w3.org/1999/html">
+  <h1> Питання</h1>
+  <% if current_user%>
+      <%= link_to  '' ,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new_modal'}  do %>
+          <%=icon "plus-circle", "2x"  %>
+      <%end%>
+  <%end%>
+
+  <div id="new_modal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <%=  render 'new_modal' %>
+</div>
+
+<div class="cards">
+  <% @topics.each do |topic|%>
+
+        <%= render 'list', topic:topic%>
+
+<%end%>
+  <%= will_paginate @topics , class="pagination"%>
+</div>
+</div>

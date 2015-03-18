@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to  topics_path do %>
+      <%=icon "chevron-circle-left", "2x"  %>
+      <%end%>
+  <h1>Обговорення</h1>
+
+</div>
+
+<div class="cards">
+        <%= render 'list', topic:@topic%>
+</div>
+
+<div class="container-fluid">
+    <div class="row" >
+            <div class="col-md-6 cards">
+              <h1>Positive</h1>
+
+              <%= render partial:'answers/form', locals: {answer: Answer.new(plus: true, topic_id: @topic.id)} %>
+
+              <% @plus.each do |e|%>
+                  <%= render 'answers/item_answer', answer_item:e %>
+              <%end%>
+            </div>
+
+            <div class="col-md-6 cards">
+              <h1>Negative</h1>
+              <%= render partial:'answers/form', locals: {answer: Answer.new(plus: false, topic_id: @topic.id)} %>
+              <% @minus.each do |e|%>
+              <%= render 'answers/item_answer', answer_item:e %>
+              <%end%>
+            </div>
+    </div>
+</div>
+
+
