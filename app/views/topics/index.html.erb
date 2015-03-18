@@ -1,7 +1,7 @@
 <div class="page-header" xmlns="http://www.w3.org/1999/html">
   <h1> Питання</h1>
   <% if current_user%>
-      <%= link_to  '' ,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new_modal'}  do %>
+      <%= link_to  new_topic_path  do %>
           <%=icon "plus-circle", "2x"  %>
       <%end%>
   <%end%>
