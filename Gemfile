@@ -45,20 +45,21 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'bootstrap-sass','~>3.2.0'
 
-  gem "therubyracer"
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
-  #gem "haml"
   #gem "erb2haml"
   gem "pry"
 
-  gem 'devise'
-  gem "cancan"
-  gem 'will_paginate'
+
 
 end
+gem 'devise'
+gem "cancan"
+gem 'will_paginate'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+gem 'bootstrap-sass','~>3.2.0'
 
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+#gem "haml"
