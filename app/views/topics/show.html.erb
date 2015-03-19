@@ -10,7 +10,7 @@
 <div class="container-fluid">
     <div class="row" >
             <div class="col-md-6 cards">
-              <h1>Positive</h1>
+              <h1>Плюси</h1>
 
               <%= render partial:'answers/form', locals: {answer: Answer.new(plus: true, topic_id: @topic.id)} %>
 
@@ -20,7 +20,7 @@
             </div>
 
             <div class="col-md-6 cards">
-              <h1>Negative</h1>
+              <h1>Мінуси</h1>
               <%= render partial:'answers/form', locals: {answer: Answer.new(plus: false, topic_id: @topic.id)} %>
               <% @minus.each do |e|%>
               <%= render 'answers/item_answer', answer_item:e %>

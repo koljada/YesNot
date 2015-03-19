@@ -1,4 +1,7 @@
+body{
+  background-image: url('yes_no2.jpg');
 
+}
 
   .cards{
     h1{
@@ -71,6 +74,7 @@
       padding:20px
     }
     h1{
+      font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
       display: inline;
       padding-bottom: 10px;
     }
@@ -113,11 +117,13 @@
   .pagination{
     *{
       margin:3px;
+      font-size: 20px;
     }
     .current{
       font-weight: bold;
     }
   }
+
 
 
 

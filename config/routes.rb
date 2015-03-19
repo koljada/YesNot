@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   resources :users, only:[:index, :destroy, :edit, :update]
 
+  #devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+
   #get "topics/new" => 'topics#new_modal', :as => :new_modal
 
   # The priority is based upon order of creation: first created -> highest priority.
