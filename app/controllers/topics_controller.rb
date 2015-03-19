@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
 
   # GET /topics
   def index
-    @topics = Topic.all.order('like_counter DESC').includes(:user).paginate(:page => params[:page], :per_page => 5)
+    @topics = Topic.all.order('like_counter DESC').includes(:user).paginate(:page => params[:page], :per_page => 4)
 
   end
 

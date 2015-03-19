@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
   def index
     authorize! :view,:users
-    @user=User.all.paginate(:page => params[:page], :per_page => 3)
+    @user=User.all.paginate(:page => params[:page], :per_page => 5)
   end
 
   def destroy
@@ -19,20 +19,17 @@ class UsersController < ApplicationController
 
   def update
     @user=User.find(params[:id])
-    authorize! :destroy,@user
+    authorize! :update, @user
     if @user.update(user_params)
-      redirect_to users_path , method: :get, notice: 'Topic was successfully updated.'
+      redirect_to users_path , method: :get, notice: 'User was successfully updated.'
     else
       render :edit
     end
-
   end
-
-
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :admin)
   end
 
   def set_user

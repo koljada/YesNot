@@ -65,9 +65,14 @@
   }
 
   .page-header{
+    height:40px;
+    margin-top:20px !important;
+    .headerspan{
+      padding:20px
+    }
     h1{
-      margin:8px;
       display: inline;
+      padding-bottom: 10px;
     }
   }
 
@@ -103,6 +108,15 @@
   }
   .unliked{
     .fa-thumbs-up{display: none}
+  }
+
+  .pagination{
+    *{
+      margin:3px;
+    }
+    .current{
+      font-weight: bold;
+    }
   }
 
 
